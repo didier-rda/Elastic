@@ -58,4 +58,57 @@ docker em nível de seviço
 só se preocupa com o serviço.
 docker-compose conjunto de ferramentas
 
+início da aula:
+cd elastic
+
+# executar os serviços em background
+docker-compose up -d 
+"verificar se ta funcionando curl - X GET localhost:9200/_cat/nodes?v&pretty"
+acessar os serviços pela web:
+Kibanna: http://localhost:5601/
+Elasticsearch: http://localhost:9200/
+
+
+# iniciar os serviços
+docker-compose start
+
+# parar os seviços depois pode voltar com o start ou up -d, pra não perder info
+docker-compose stop
+
+# acabou a aulas (fim de tudo)
+
+- matar os seviços- não mata os volumes
+docker-compose dowm
+
+- apagar todos os volumes sem uso
+docker volume prune
+
+# comandos úteis:
+
+visualizar container:
+Ativos
+docker ps
+
+todos
+docker ps -a
+
+executar comandos no container
+docker exec -it <container> <comando>
+
+visualizar logs
+docker logs <container>
+docker-compose logs
+
+enviar arquivos
+docker cp <diretorio> <container>:/<diretorio>
+
+
+acessar o container Elasticsearch
+docker exec -it elastic_elasticsearch_1 bash
+
+acessar o container Kibana
+docker exec -it elastic_kibana_1 bash
+
+acessar o container Logstash
+docker exec -it elastic_logstash_1 bash
 

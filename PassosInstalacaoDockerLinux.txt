@@ -1,0 +1,56 @@
+
+=> Docker:
+(On Manjaro)
+sudo pacman -Syu
+sudo pacman -S docker
+
+# enable docker on startup
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# By default, only user with root or sudo privileges can run or manage Docker. If you want to run docker without 
+root privileges or without having to add sudo everytime, do the following
+sudo usermod -aG docker $USER
+
+# install docker compolse
+sudo pacman -S docker-compose
+
+sudo apt update
+sudo apt upgrade
+sudo apt-get install  curl apt-transport-https ca-certificates software-properties-common
+sudo pacman -Sy curl apt-transport-https ca-certificates software-properties-common
+
+sudo apt-get install  curl ca-certificates software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+sudo apt install docker-ce
+sudo systemctl status docker
+Check:
+sudo docker run hello-world
+Sem sudo:
+sudo usermod -aG docker $(whoami)
+sudo reboot
+
+=> Docker-Compose:
+sudo curl -L https://github.com/docker/compose/releases/download/1.25.3/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+Check:
+docker-compose --version
+mkdir helloTeste
+cd helloTeste
+nano docker-compose.yml
+Conteudo:
+...
+my-test:
+ image: hello-world
+...
+docker-compose up
+docker ps -a
+docker images
+docker-compose down
+docker ps -a
+docker images
+Para remover container e imagem respectivamente temos: docker rm <id> E docker rmi <id>
+
+

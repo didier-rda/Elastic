@@ -1,0 +1,61 @@
+problemas de busca.
+
+altamente escalável
+
+Tem:
+Elasticsearch, logstash e Kibana
+
+Elasticsearch: 
+Busca e analytics altamente escalável
+Banco de dados
+
+Logstasg: 
+Transporte entre origem e destino
+
+Kibana: 
+GUI do elastic
+Visualização dos dados
+Gerenciamento do ElasticSearch
+Gerenciamento do cluster
+
+Beats:
+Coletor de dados
+Distribuído
+Lado do cliente
+Não servidor
+
+Banco de dados vc ElasticSearch
+Banco de dados        | Index
+Tabela                | Type
+Schema                | Mapping : Mapeamento dos dados
+Registro (linha)      | Documento : Orientado a documento
+Coluna                | Atributo 
+
+Ser um motor de busca e No SQL orientado a documento
+
+Índice: Onde ficam todas as informações
+
+ele é dividido em:
+
+Shards  
+    - Índice é dividido por shards
+    - Armazenamena os dados
+Alias
+    - Link virtual para um índice real (apelido)
+    - Associar um alias a mais de um índice (grupos)
+
+Analyzer
+    - Buscar por Full Text e valores exatos
+
+Mapping
+    -Definição da estrutura do seu índice
+
+db-engines.com/
+
+ranking dos tipos de banco de dados
+
+docker em nível de seviço
+só se preocupa com o serviço.
+docker-compose conjunto de ferramentas
+
+
